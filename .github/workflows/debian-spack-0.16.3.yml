@@ -1,4 +1,4 @@
-name: debian-spack-develop
+name: debian-spack-v0.16.3
 
 on:
   push:
