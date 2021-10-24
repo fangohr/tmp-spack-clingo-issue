@@ -1,6 +1,6 @@
 
 
-# Install oomm via spack. Using most recent spack version
+# Install zlib via spack. Using most recent spack version
 develop:
 	docker build -t develop --build-arg SPACK_VERSION=develop .
 
