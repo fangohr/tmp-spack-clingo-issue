@@ -1,18 +1,16 @@
 FROM debian:bullseye
 
-# # which spack version are we using now? Default is develop
+# # which spack version are we using? Default is develop
 # # but other strings can be given to the docker build command
-# # (for example docker build --build-arg SPACK_VERSION=v0.16.2)
+# # (for example docker build --build-arg SPACK_VERSION=v0.16.3)
 ARG SPACK_VERSION=develop
 
 RUN echo "Building with spack version ${SPACK_VERSION}"
 
 WORKDIR /opt
 
-# general environment for docker
 ENV SPACK_ROOT=/opt/spack \
-	  SPACK=/opt/spack/bin/spack #\
-#    FORCE_UNSAFE_CONFIGURE=1
+  SPACK=/opt/spack/bin/spack
 
 RUN apt-get -y update
 
