@@ -11,16 +11,14 @@ WORKDIR /opt
 
 # general environment for docker
 ENV SPACK_ROOT=/opt/spack \
-	  SPACK=/opt/spack/bin/spack \
-          FORCE_UNSAFE_CONFIGURE=1
+	  SPACK=/opt/spack/bin/spack #\
+#    FORCE_UNSAFE_CONFIGURE=1
 
-RUN pwd
 RUN apt-get -y update
-# Convenience tools
 
 # From https://github.com/ax3l/dockerfiles/blob/master/spack/base/Dockerfile:
 # install minimal spack dependencies
-RUN        apt-get install -y --no-install-recommends \
+RUN  apt-get install -y --no-install-recommends \
               autoconf \
               build-essential \
               ca-certificates \
@@ -41,7 +39,6 @@ RUN echo "source $SPACK_ROOT/share/spack/setup-env.sh" \
 
 # install spack
 RUN git clone https://github.com/spack/spack.git
-# default branch is develop
 RUN cd spack && git checkout $SPACK_VERSION
 
 # # show which version we use
@@ -50,4 +47,3 @@ RUN $SPACK --version
 RUN $SPACK install zlib
 
 CMD /bin/bash -l
-
