@@ -1,18 +1,16 @@
 name: debian-spack-develop
 
 on:
-  # Trigger the workflow on push or pull request,
-  # but only for the spack-develop branch
   push:
     branches:
       - main
   jobs:
 
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: make v0.16.3
+    build:
+  
+      runs-on: ubuntu-latest
+  
+      steps:
+      - uses: actions/checkout@v2
+      - name: Build zlip with spack-v0.16.3 in Debian container
+        run: make v0.16.3
