@@ -22,6 +22,6 @@ The installation can be made to work by installing the Debian packages
 `libpython3-dev` and `python3-distutils` as additional prerequisits (see
 [Dockerfile-fixed](Dockerfile-fixed)): [![debian-spack-develop-fixed](https://github.com/fangohr/tmp-spack-clingo-issue/actions/workflows/debian-spack-develop-fixed.yml/badge.svg)](https://github.com/fangohr/tmp-spack-clingo-issue/actions/workflows/debian-spack-develop-fixed.yml)
 
-
+[Relates to Spack Issue https://github.com/spack/spack/issues/22606]
 
 
