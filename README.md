@@ -16,12 +16,10 @@ To reproduce locally:
 - run `make develop` for the develop branch 
 - run `make v0.16.3` for the 0.16.3 release
 
------------
-
-The installation can be made to work by installing the Debian packages
-`libpython3-dev` and `python3-distutils` as additional prerequisits (see
-[Dockerfile-fixed](Dockerfile-fixed)): [![debian-spack-develop-fixed](https://github.com/fangohr/tmp-spack-clingo-issue/actions/workflows/debian-spack-develop-fixed.yml/badge.svg)](https://github.com/fangohr/tmp-spack-clingo-issue/actions/workflows/debian-spack-develop-fixed.yml)
-
 [Relates to Spack Issue https://github.com/spack/spack/issues/22606]
 
+-----------
 
+## Update 25 October 2021: the issue is solved
+
+The installed prerequisites were incomplete. The command `file` was not available. This prevented the bootstrap of binary clingo, and the bootstrapping of clingo from source needed further packages. Thanks to @alalazo for the input.
