@@ -15,7 +15,9 @@ ENV SPACK_ROOT=/opt/spack \
 RUN apt-get -y update
 
 # From https://github.com/ax3l/dockerfiles/blob/master/spack/base/Dockerfile:
-# install minimal spack dependencies
+# install minimal spack dependencies.
+# Additional dependencies from
+# https://spack.readthedocs.io/en/latest/getting_started.html#id7
 RUN  apt-get install -y --no-install-recommends \
               autoconf \
               build-essential \
@@ -23,6 +25,7 @@ RUN  apt-get install -y --no-install-recommends \
               coreutils \
               curl \
               environment-modules \
+    	      file \
               gfortran \
               git \
               openssh-server \
@@ -30,6 +33,11 @@ RUN  apt-get install -y --no-install-recommends \
               unzip \
               vim \
            && rm -rf /var/lib/apt/lists/*
+
+# Other recommened packages, but not needed for this example
+#mercurial \
+#subversion
+#gnupg2 \
 
 # load spack environment on login
 RUN echo "source $SPACK_ROOT/share/spack/setup-env.sh" \
