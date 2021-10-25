@@ -1,9 +1,6 @@
 name: debian-spack-v0.16.3
 
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
 
